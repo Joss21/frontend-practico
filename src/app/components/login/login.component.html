@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <div *ngIf="errorMsg" class="alert alert-danger mt-3 text-center">
+            {{ errorMsg }}
+          </div>
+
+          <h4 class="card-title text-center mb-4">Iniciar Sesión</h4>
+          <div class="text-center mb-4">
+            <img src="assets/logo.jpg" alt="Logo" class="img-fluid" />
+          </div>
+          <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+            <div class="mb-3">
+              <label for="usuario" class="form-label">Usuario</label>
+              <input
+                type="text"
+                id="usuario"
+                formControlName="usuario"
+                class="form-control"
+                [class.is-invalid]="
+                  submitted && loginForm.get('usuario')?.invalid"
+                autocomplete="off"
+              />
+              <div class="invalid-feedback">Usuario es requerido.</div>
+            </div>
+            <div class="mb-3">
+              <label for="contrasena" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                id="contrasena"
+                formControlName="contrasena"
+                class="form-control"
+                [class.is-invalid]="
+                  submitted && loginForm.get('contrasena')?.invalid"
+              />
+              <div class="invalid-feedback">Contraseña es requerida.</div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">
+              Ingresar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

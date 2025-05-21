@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <div class="container-fluid justify-content-between">
+    <a class="navbar-brand text-white" [routerLink]="['/document-list']"
+      >Gestión de Documento</a>
+  </div>
+</nav>
+<div class="container mt-5" *ngIf="!loading">
+  <h3>Editar Nombre del Documento</h3>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nuevo Nombre</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+      />
+    </div>
+    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+    <a [routerLink]="['/document-list']" class="btn btn-secondary ms-2"
+      >Cancelar</a>
+    <div *ngIf="errorMsg" class="alert alert-danger mt-3">{{ errorMsg }}</div>
+  </form>
+</div>

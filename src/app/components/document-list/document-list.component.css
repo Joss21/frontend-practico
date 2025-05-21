@@ -1,0 +1,18 @@
+.modal-backdrop-custom {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content-custom {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  min-width: 500px;
+  min-height: 100px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
